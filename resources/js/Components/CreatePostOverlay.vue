@@ -35,13 +35,26 @@ const closeOverlay = () => {
 
         <div class="max-w-6xl h-[calc(100%-100px)] mx-auto mt-10 bg-white rounded-xl">
             <div class="flex items-center justify-between w-full rounded-t-xl p-3 border-b border-b-gray-300">
-                <ArrowLeft :size="30" fillColor="#000000" @click="closeOverlay()"/>
+                <ArrowLeft :size="30" fillColor="#000000" @click="closeOverlay()" />
                 <div class="text-lg font-extrabold">New reel</div>
                 <button @click="createPostFunc()" class=" text-lg text-blue-500 hover:text-gray-900 font-extrabold">
                     Share
                 </button>
             </div>
+
+            <div class="w-full md:flex h-[calc(100%-55px)] rounded-xl overflow-auto">
+                <div class="flex items-center bg-gray-100 w-full h-full overflow-hidden">
+                    <div v-if="!fileDisplay" class="flex flex-col items-center mx-auto">
+                        <label for="file"
+                            class="hover:bg-blue-700 bg-blue-500 rounded-lg p-2.5 text-white font-extrabold cursor-pointer">
+                            Select From Computer
+                        </label>
+                    </div>
+                </div>
+            </div>
         </div>
-        
+
+
+
     </div>
 </template>
