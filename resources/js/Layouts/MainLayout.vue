@@ -13,6 +13,9 @@ import ChevronLeft from 'vue-material-design-icons/ChevronLeft.vue';
 import AccountPlusOutline from 'vue-material-design-icons/AccountPlusOutline.vue';
 
 import MenuItem from '@/Components/MenuItem.vue'
+import CreatePostOverlay from '@/Components/CreatePostOverlay.vue'  
+
+let showCreatePost = ref(false)
 
 </script>
 
@@ -88,8 +91,10 @@ import MenuItem from '@/Components/MenuItem.vue'
                 </Link>
 
                 <Link href="/">
-                <MenuItem iconString="Profile" class="mb-4" />
+                <MenuItem  iconString="Profile" class="mb-4" />
                 </Link>
+
+                <MenuItem @click="$event => showCreatePost = true" iconString="Create" class="mb-4" />
 
             </div>
             <Link href="/" class="absolute bottom-0 px-3 w-full">
@@ -150,12 +155,31 @@ import MenuItem from '@/Components/MenuItem.vue'
 
 
 
+                <div class="max-w-[300px] mt-5">
+                    <div class="text-sm text-gray-400">Developed with love by Rabie ouallaf</div>
+                </div>
             </div>
 
-            <div class="max-w-[300px] mt-5">
-                <div class="text-sm text-gray-400">Rabie ouallaf</div>
+            <div id="BottomNav" class="fixed z-30 bottom-0 w-full md:hidden flex items-center justify-around bg-white">
+                <Link href="/">
+                    <HomeOutline fillColor="#00000" :size="33" class="cursor-pointer"/>
+                </Link>
+
+                <Compass fillColor="#00000" :size="33" class="cursor-pointer" />
+                <SendOutline fillColor="#00000" :size="33" class="cursor-pointer" />
+                <Plus @click="$event => showCreatePost = true" fillColor="#00000" :size="33" class="cursor-pointer" />
+                <AccountOutline fillColor="#00000" :size="33" class="cursor-pointer" />
+
+                <Link href="/">
+                    <img 
+                        class="rounded-full w-[30px] cursor-pointer"
+                        src="https://picsum.photos/id/50/200/320"
+                    />
+                </Link>
             </div>
 
         </div>
     </div>
+
+    <CreatePostOverlay v-if="showCreatePost" @close="$event => showCreatePost = false"/>
 </template>
