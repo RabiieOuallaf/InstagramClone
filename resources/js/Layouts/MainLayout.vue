@@ -30,82 +30,132 @@ import MenuItem from '@/Components/MenuItem.vue'
 
                 <div class="flex items-center w-[50%]">
                     <div class="flex items-center w-full bg-gray-100 rounded-lg">
-    
+
                         <Magnify class="pl-4" fillColor="#8E8E8E" :size="27" />
                         <input type="text" placeholder="Search"
                             class="bg-transparent w-full placeholder-[#8E8E8E] border-0 ring-0 focus:ring-0" />
-    
+
                     </div>
 
                     <HeartOutline class="pl-4 pr-3" fillColor="#0000000" :size="27" />
                 </div>
 
-                
+
             </div>
 
         </div>
 
-        <div
-            v-if="$page.url !== '/'"
-            id="TopNavUser"
-            class="md:hidden fixed flex items-center justify-between z-30 w-full bg-white h-[61px] border-b border-b-gray-300"
-        >
+        <div v-if="$page.url !== '/'" id="TopNavUser"
+            class="md:hidden fixed flex items-center justify-between z-30 w-full bg-white h-[61px] border-b border-b-gray-300">
             <Link href="/" class="px-4">
-                <ChevronLeft :size="30" class="cursor-pointer"/>
+            <ChevronLeft :size="30" class="cursor-pointer" />
             </Link>
             <div class="font-extrabold text-lg">
                 NAME HERE
             </div>
-            <AccountPlusOutline :size="30" class="cursor-pointer px-4"/>
+            <AccountPlusOutline :size="30" class="cursor-pointer px-4" />
 
         </div>
 
-        <div id="SideNav"
-             class="fixed h-full bg-white xl:w-[280px] w-[80px] md:block hidden border-r border-r-gray-300"
-        >
+        <div id="SideNav" class="fixed h-full bg-white xl:w-[280px] w-[80px] md:block hidden border-r border-r-gray-300">
 
             <Link href="/">
 
-                <img class="xl:hidden block w-[25px] mt-10 ml-[25px] mb-10 cursor-pointer"
-                     src="/insta-logo-small.png"
-                />
+            <img class="xl:hidden block w-[25px] mt-10 ml-[25px] mb-10 cursor-pointer" src="/insta-logo-small.png" />
 
-                <img class="xl:block hidden w-[120px] mt-10 ml-6 m   b-10 cursor-pointer"
-                     src="/insta-logo.png"
-                />
+            <img class="xl:block hidden w-[120px] mt-10 ml-6 m   b-10 cursor-pointer" src="/insta-logo.png" />
             </Link>
 
             <div class="px-3">
                 <Link href="/">
-                    <MenuItem iconString="Home" class="mb-4"/>
+                <MenuItem iconString="Home" class="mb-4" />
                 </Link>
 
                 <Link href="/">
-                    <MenuItem iconString="Search" class="mb-4"/>
+                <MenuItem iconString="Search" class="mb-4" />
                 </Link>
 
                 <Link href="/">
-                    <MenuItem iconString="Explore" class="mb-4"/>
+                <MenuItem iconString="Explore" class="mb-4" />
                 </Link>
 
                 <Link href="/">
-                    <MenuItem iconString="Messages" class="mb-4"/>
+                <MenuItem iconString="Messages" class="mb-4" />
                 </Link>
 
                 <Link href="/">
-                    <MenuItem iconString="Notifications" class="mb-4"/>
+                <MenuItem iconString="Notifications" class="mb-4" />
                 </Link>
 
                 <Link href="/">
-                    <MenuItem iconString="Profile" class="mb-4"/>
+                <MenuItem iconString="Profile" class="mb-4" />
                 </Link>
 
             </div>
             <Link href="/" class="absolute bottom-0 px-3 w-full">
-                <MenuItem iconString="Log out" class="mb-4"/>
+            <MenuItem iconString="Log out" class="mb-4" />
             </Link>
 
         </div>
-    </div>
 
+        <div class="flex lg:justify-center bg-white h-full w-[100%-280px] xl:pl-[280px] lg:pl-[100px] overflow-auto">
+
+            <div class="mx-auto md:pt-6 pt-20" :class="$page.url === '/' ? 'lg:w-8/12 w-full' : 'max-w-[1200px]'">
+                <main>
+                    <slot />
+                </main>
+            </div>
+            <div v-if="$page.url === '/'" id="SuggestionsSection" class="lg:w-4/12 lg:block hidden text-black mt-10">
+                <Link href="/" class="flex items-center justify-between max-w-[300px]">
+                <div class="flex items-center">
+                    <img class="rounded-full z-10 w-[58px] h-[58px]" src="https://picsum.photos/id/50/300/320" />
+
+                    <div class="pl-4">
+                        <div class="text-black font-extrabold">Rabie ouallaf</div>
+                        <div class="text-gray-500 font-extrabold text-sm">Rabie ouallaf</div>
+                    </div>
+                </div>
+                <button class="text-blue-500 hover:text-gray-900 text-sm font-extrabold">
+                    Switch
+                </button>
+                </Link>
+
+                <div class="max-w-[300px] flex items-center justify-between py-3">
+                    <div class="text-gray-500 font-extrabold">
+                        Suggestions for you
+                    </div>
+                    <button class="text-blue-500 hover:text-gray-900 text-xs font-extrabold">
+                        See All
+                    </button>
+                </div>
+
+                <Link href="/" class="flex items-center justify-between max-w-[300px] pb-2">
+
+                <div class="flex items-center">
+                    <img class="rounded-full z-10 w-[58px] h-[58px]" src="https://picsum.photos/id/50/200/320" />
+
+                    <div class="pl-4">
+                        <div class="text-black font-extrabold">Rabie ouallaf</div>
+                        <div class="text-gray-500 font-extrabold text-sm">Rabie ouallaf</div>
+                    </div>
+
+
+
+                </div>
+                <button class="text-blue-500 hover:text-gray-900 text-sm font-extrabold">
+                    Follow
+                </button>
+
+                </Link>
+
+
+
+            </div>
+
+            <div class="max-w-[300px] mt-5">
+                <div class="text-sm text-gray-400">Rabie ouallaf</div>
+            </div>
+
+        </div>
+    </div>
 </template>

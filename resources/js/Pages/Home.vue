@@ -8,7 +8,7 @@ import MainLayout from '@/Layouts/MainLayout.vue';
     <Head title="HOME" />
     
     <MainLayout>
-        
+        <div>Home.vue</div>
     </MainLayout>
 </template>
 
