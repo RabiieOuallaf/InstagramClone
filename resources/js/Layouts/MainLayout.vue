@@ -79,10 +79,33 @@ import MenuItem from '@/Components/MenuItem.vue'
                 <Link href="/">
                     <MenuItem iconString="Home" class="mb-4"/>
                 </Link>
+
+                <Link href="/">
+                    <MenuItem iconString="Search" class="mb-4"/>
+                </Link>
+
+                <Link href="/">
+                    <MenuItem iconString="Explore" class="mb-4"/>
+                </Link>
+
+                <Link href="/">
+                    <MenuItem iconString="Messages" class="mb-4"/>
+                </Link>
+
+                <Link href="/">
+                    <MenuItem iconString="Notifications" class="mb-4"/>
+                </Link>
+
+                <Link href="/">
+                    <MenuItem iconString="Profile" class="mb-4"/>
+                </Link>
+
             </div>
+            <Link href="/" class="absolute bottom-0 px-3 w-full">
+                <MenuItem iconString="Log out" class="mb-4"/>
+            </Link>
 
         </div>
     </div>
 
-    <slot />
 </template>
