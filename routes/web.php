@@ -23,7 +23,9 @@ Route::get('/', function () {
 Route::get('/user', function () {
     return Inertia::render('User');
 });
-
+Route::get('/login', function() {
+    return Inertia::render('Auth/Login');
+});
 
 
 Route::middleware('auth')->group(function () {
