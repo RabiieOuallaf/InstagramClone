@@ -71,6 +71,7 @@ onMounted( () => {
             </div>
         </div>
     </MainLayout>
+    
 </template>
 
 <style>
