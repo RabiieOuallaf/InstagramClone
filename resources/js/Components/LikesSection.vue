@@ -14,9 +14,14 @@ import BookmarkOutline from 'vue-material-design-icons/BookmarkOutline.vue'
     <div class="flex z-20 items-center justify-between">
         <div class="flex items-center">
             <button class="-mt-[14px]">
-                <HeartOutline class="pl-3 cursor-pointer" :size="30"/>
+                
+                <HeartOutline class="pl-3 cursor-pointer" fillColor="#FF0000" :size="30" />
             </button>
+            <CommentOutline class="pl-3 pt-[10px]" :size="30" />
+            <SendOutline class="pl-3 pt-[10px]" :size="30" />
         </div>
+
+        <BookmarkOutline class="pl-3 pt-[10px]" :size="30" />
     </div>
 
 </template>
