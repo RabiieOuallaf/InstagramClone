@@ -33,7 +33,7 @@ const createPostFunc = () => {
     error.value.text = null
     error.value.file = null
 
-    router.post('/posts', form, {
+    router.post('/post', form, {
         forceFormData: true,
         preserveScroll: true,
         onError: errors => {
