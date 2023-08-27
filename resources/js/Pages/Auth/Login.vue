@@ -35,6 +35,8 @@ const submit = () => {
 
         <img class="mx-auto pt-8 pb-10" width="200" src="/insta-logo.png">
 
+        <div class="text-gray-600 text-center font-extrabold text-[22px] mb-4">Sign up to see photos and videos from your friends.</div>
+
         <form @submit.prevent="submit">
             <div>
 
