@@ -92,7 +92,7 @@ onMounted( () => {
     <ShowPostOverlay 
         v-if="openOverlay"
         :post="currentPost"
-        @closeOverlay="$event => openOverlay = false"
+        @closeOverlay="openOverlay = false"
     />
     
 </template>
