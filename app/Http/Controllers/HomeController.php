@@ -14,9 +14,11 @@ class HomeController extends Controller
     public function index()
     {
         $posts = Post::orderBy('created_at', 'desc')->get();
+        $allUsers = User::all();
         return Inertia::render('Home', [
             'posts' => new AllPostsCollection($posts),
-            'allUsers' => User::all()
+            'allUsers' => $allUsers
+        
         ]);
     }
 }

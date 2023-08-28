@@ -96,8 +96,8 @@ const updatedPost = (object) => {
             <Carousel
                 v-model="currentSlide"
                 class="max-w-[700px] mx-auto"
-                :items-to-show="wWidth >= 768 ? 8 : 6"
-                :items-to-scroll="4"
+                :items-to-show="allUsers.length"
+                :items-to-scroll="2"
                 :wrap-around="true"
                 :transition="500"
                 snapAlign="start"
