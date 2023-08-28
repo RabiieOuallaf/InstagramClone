@@ -33,7 +33,11 @@ const submit = () => {
     <GuestLayout>
         <Head title="Log in" />
 
-        <img class="mx-auto pt-8 pb-10" width="200" src="/insta-logo.png">
+        <div class="logo flex justify-center items-center">
+
+            <img class=" pt-8 pb-10" width="200" src="/insta-logo.png">
+            <p class="m-0 font-bold font-sans">Mini</p>
+        </div>
 
 
         <form @submit.prevent="submit">

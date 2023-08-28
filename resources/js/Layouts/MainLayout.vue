@@ -62,9 +62,10 @@ let showCreatePost = ref(false)
 
         <div id="SideNav" class="fixed h-full bg-white xl:w-[280px] w-[80px] md:block hidden border-r border-r-gray-300">
 
-            <Link href="/">
+            <Link href="/" class="flex items-center font-bold font-sans">
                 <img class="xl:hidden block w-[25px] mt-10 ml-[25px] mb-10 cursor-pointer" src="/insta-logo-small.png">
                 <img class="xl:block hidden w-[120px] mt-10 ml-6 mb-10 cursor-pointer" src="/insta-logo.png">
+                <p class="hidden xl:block">mini</p>
             </Link>
 
             <div class="px-3">
@@ -130,7 +131,7 @@ let showCreatePost = ref(false)
 
                 <div class="max-w-[300px] mt-5">
                     <div class="text-sm text-gray-400">About Help Press API Jobs Privacy Terms Locations Language Meta Verified</div>
-                    <div class="text-left text-gray-400 mt-4">© 2023 INSTAGRAM FROM META</div>
+                    <div class="text-left text-gray-400 mt-4">© 2023 INSTAGRA mini developed by Rabie ouallaf</div>
                 </div>
             </div>
         </div>

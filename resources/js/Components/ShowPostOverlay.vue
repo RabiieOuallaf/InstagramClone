@@ -52,6 +52,7 @@ const textareaInput = (e) => {
                                 <div>{{ post.created_at }}</div>
                             </div>
                         </div>
+                        
                         <button
                             v-if="user.id === post.user.id"
                             @click="deleteType = 'Post'; id = post.id"
