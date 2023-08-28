@@ -97,8 +97,8 @@ let showCreatePost = ref(false)
                 <MenuItem @click="$event => showCreatePost = true" iconString="Create" class="mb-4" />
 
             </div>
-            <Link href="/" class="absolute bottom-0 px-3 w-full">
-            <MenuItem iconString="Log out" class="mb-4" />
+            <Link :href="route('logout')" as="button" method="post" class="absolute bottom-0 px-3 w-full">
+                <MenuItem iconString="Log out" class="mb-4" />
             </Link>
 
         </div>
