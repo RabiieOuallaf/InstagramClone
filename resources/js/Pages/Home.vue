@@ -1,15 +1,15 @@
 <script setup>
-import MainLayout from '@/Layouts/MainLayout.vue'
-import ShowPostOverlay from '@/Components/ShowPostOverlay.vue'
-
 import { ref, onMounted, toRefs } from 'vue'
-import { Head, Link, router } from '@inertiajs/vue3'
+import { Head, Link, router } from '@inertiajs/vue3';
+import MainLayout from '@/Layouts/MainLayout.vue';
+
+import LikesSection from '@/Components/LikesSection.vue'
+import ShowPostOverlay from '@/Components/ShowPostOverlay.vue'
 
 import 'vue3-carousel/dist/carousel.css'
 import { Carousel, Slide, Navigation } from 'vue3-carousel'
 
-import DotsHorizontal from 'vue-material-design-icons/DotsHorizontal.vue'
-import LikesSection from '@/Components/LikesSection.vue'
+import DotsHorizontal from 'vue-material-design-icons/DotsHorizontal.vue';
 
 let wWidth = ref(window.innerWidth)
 let currentSlide = ref(0)
@@ -19,11 +19,6 @@ let openOverlay = ref(false)
 const props = defineProps({ posts: Object, allUsers: Object })
 const { posts, allUsers } = toRefs(props)
 
-onMounted(() => {
-    window.addEventListener('resize', () => {
-        wwidth.value = window.innerHeight
-    })
-})
 onMounted(() => {
     window.addEventListener('resize', () => {
         wWidth.value = window.innerWidth
@@ -94,7 +89,8 @@ const updatedPost = (object) => {
 </script>
 
 <template>
-    <Head title="HOME" />
+    <Head title="Instagram" />
+
     <MainLayout>
         <div class="mx-auto lg:pl-0 md:pl-[80px] pl-0">
             <Carousel
@@ -162,6 +158,7 @@ const updatedPost = (object) => {
             <div class="pb-20"></div>
         </div>
     </MainLayout>
+
     <ShowPostOverlay
         v-if="openOverlay"
         :post="currentPost"
@@ -171,16 +168,17 @@ const updatedPost = (object) => {
             deleteFunc($event);
         "
         @closeOverlay="openOverlay = false"
-    /></template>
+    />
+</template>
 
 <style>
-.carousel__prev,
-.carousel__next,
-.carousel__prev:hover,
-.carousel__next:hover {
-    color: rgb(49, 49, 49);
-    background-color: rgb(255, 255, 255);
-    border-radius: 100%;
-    margin: 0 20px;
-}
+    .carousel__prev,
+    .carousel__next,
+    .carousel__prev:hover,
+    .carousel__next:hover {
+        color: rgb(49, 49, 49);
+        background-color: rgb(255, 255, 255);
+        border-radius: 100%;
+        margin: 0 20px;
+    }
 </style>
